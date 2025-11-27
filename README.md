@@ -113,3 +113,54 @@ Visual plots showing predicted vs real paths
 Comparative evaluations between different architectures.
 
 Vizualizing the paths on the videos. First, we'll only draw on images, since for videos we have to interpolate (we have a 30fps video but not so many annotations, so we have to interpolate which... complicates a bit things. Make sure it works first)
+
+---
+
+## **Setting up**
+
+For this it is highly recommended you use a virtual environment. 
+
+1. Create the virtual environment
+
+Run the following in the project root:
+```bash
+python3 -m venv .venv
+```
+
+2. Activate the environment
+
+Linux / macOS:
+```bash
+source .venv/bin/activate
+```
+
+Windows (PowerShell):
+```bash
+.\.venv\Scripts\activate
+```
+
+After activation, your terminal prompt should include (.venv).
+
+3. Install project dependencies
+
+If a requirements.txt file exists, install everything with:
+```bash
+pip install -r requirements.txt
+```
+
+Otherwise, install packages normally:
+```bash
+pip install <package-name>
+```
+
+Save any new installs with:
+```bash
+pip freeze > requirements.txt
+```
+4. Deactivate when finished
+```bash
+deactivate
+```
+
+This returns your shell to the system Python environment.
+

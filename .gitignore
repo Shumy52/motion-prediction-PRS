@@ -1,3 +1,4 @@
 # Don't fucking put the datasets in git
 /data/*
 !/.gitkeep
+.venv/
