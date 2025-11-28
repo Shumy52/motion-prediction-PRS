@@ -62,11 +62,12 @@ The project uses: **Stanford Drone Dataset (SDD)**
 
 Only the position sequences are used — the project does not process video directly.
 
-Do make sure you download it from [keggle ](https://www.kaggle.com/datasets/aryashah2k/stanford-drone-dataset), the original one from Stanford has 70 fucking gigabytes. This one is supposed to be compressed, no significant data loss, at 1.5 GB.
+Do make sure you download it from [keggle ](https://www.kaggle.com/datasets/aryashah2k/stanford-drone-dataset), the original one from Stanford has 70 gigabytes. This one is supposed to be compressed, no significant data loss, at 1.5 GB.
 
 ### Meaning of each of the columns in the annotations
 
 Example:
+
 ```text
 2 1 872 33 915 6659 1 0 1 "Pedestrian"
 2 1 872 33 915 6660 1 0 1 "Pedestrian"
