@@ -26,7 +26,7 @@ The immediate aim is to build a reliable baseline before moving on to more advan
 
 ## **Model Architecture (Current Choice)**
 
-The main model used in this stage is a  **GRU-based sequence predictor** 
+The main model used in this stage is a  **GRU-based sequence predictor**
 
 ### **Why GRU?**
 
@@ -51,9 +51,9 @@ The model will take, for example, **8 past points** and predict the next **12** 
 
 ## **Dataset**
 
-The project uses:
+### Dataset description
 
-### **Stanford Drone Dataset (SDD)**
+The project uses: **Stanford Drone Dataset (SDD)**
 
 * Overhead videos of pedestrians/bikers/carts
 * Clean 2D coordinates already provided
@@ -64,6 +64,27 @@ Only the position sequences are used — the project does not process video dire
 
 Do make sure you download it from [keggle ](https://www.kaggle.com/datasets/aryashah2k/stanford-drone-dataset), the original one from Stanford has 70 fucking gigabytes. This one is supposed to be compressed, no significant data loss, at 1.5 GB.
 
+### Meaning of each of the columns in the annotations
+
+Example:
+```text
+2 1 872 33 915 6659 1 0 1 "Pedestrian"
+2 1 872 33 915 6660 1 0 1 "Pedestrian"
+2 1 872 33 915 6661 1 0 1 "Pedestrian"
+2 1 872 33 915 6662 1 0 1 "Pedestrian"
+```
+
+1. Track ID. All rows with the same ID belong to the same path.
+2. xmin. The top left x-coordinate of the bounding box.
+3. ymin. The top left y-coordinate of the bounding box.
+4. xmax. The bottom right x-coordinate of the bounding box.
+5. ymax. The bottom right y-coordinate of the bounding box.
+6. frame. The frame that this annotation represents.
+7. lost. If 1, the annotation is outside of the view screen.
+8. occluded. If 1, the annotation is occluded.
+9. generated. If 1, the annotation was automatically interpolated.
+10. label. The label for this annotation, enclosed in quotation marks.
+
 ---
 
 ## **Repository Structure (Planned)**
@@ -72,7 +93,7 @@ Do make sure you download it from [keggle ](https://www.kaggle.com/datasets/arya
 trajectory-prediction/
 │
 ├── data/
-│   ├── raw/    
+│   ├── raw/  
 │   └── processed/  
 │
 ├── src/
@@ -118,11 +139,12 @@ Vizualizing the paths on the videos. First, we'll only draw on images, since for
 
 ## **Setting up**
 
-For this it is highly recommended you use a virtual environment. 
+For this it is highly recommended you use a virtual environment.
 
 1. Create the virtual environment
 
 Run the following in the project root:
+
 ```bash
 python3 -m venv .venv
 ```
@@ -130,11 +152,13 @@ python3 -m venv .venv
 2. Activate the environment
 
 Linux / macOS:
+
 ```bash
 source .venv/bin/activate
 ```
 
 Windows (PowerShell):
+
 ```bash
 .\.venv\Scripts\activate
 ```
@@ -144,23 +168,27 @@ After activation, your terminal prompt should include (.venv).
 3. Install project dependencies
 
 If a requirements.txt file exists, install everything with:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 Otherwise, install packages normally:
+
 ```bash
 pip install <package-name>
 ```
 
 Save any new installs with:
+
 ```bash
 pip freeze > requirements.txt
 ```
+
 4. Deactivate when finished
+
 ```bash
 deactivate
 ```
 
 This returns your shell to the system Python environment.
-
